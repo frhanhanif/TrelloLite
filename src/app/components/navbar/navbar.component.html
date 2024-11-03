@@ -1,9 +1,21 @@
-<mat-toolbar class="mat-elevation-z2">
-    <button mat-icon-button (click)="sharedService.toggleCollapsed()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <h1 class="header">
-        <img src="assets/logo.png" alt="logo" class="logo" />
-        <span>Kanban Task Planner</span>
-    </h1>
-</mat-toolbar>
+<nav class="bg-blue-900">
+    <div class="mx-auto sm:px-10 lg:px-10">
+      <div class="relative flex h-14 items-center justify-between">
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex flex-shrink-0 items-center">
+            <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-base font-semibold text-white hover:bg-white hover:text-black " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                Projects
+                <svg class="-mr-1 h-5 w-5 text-white  hover:text-black " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                  <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                </svg>
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  
