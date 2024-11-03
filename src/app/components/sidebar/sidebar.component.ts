@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, computed, Input, Signal } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { KanbanBoardComponent } from '../kanban-board/kanban-board.component';
 import { MatIcon } from '@angular/material/icon';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { SharedService } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,5 +16,8 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+  
+  constructor(public sharedService: SharedService) {}
 
+  sidebarWidth = computed(()=>this.sharedService.collapsed() ? '65px' : '200px')
 }

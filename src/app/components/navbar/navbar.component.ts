@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { SharedService } from "../../shared/shared.service";
 
 
 @Component({
@@ -12,5 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+
+  constructor(public sharedService: SharedService) {}
 
 }
