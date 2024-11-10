@@ -1,7 +1,6 @@
 import { Component, computed, Input, Signal } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { KanbanBoardComponent } from '../kanban-board/kanban-board.component';
 import { MatIcon } from '@angular/material/icon';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SharedService } from '../../shared/shared.service';
@@ -9,7 +8,7 @@ import { SharedService } from '../../shared/shared.service';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [MatSidenavModule,MatListModule,KanbanBoardComponent,
+  imports: [MatSidenavModule,MatListModule,
     MatIcon
   ],
   templateUrl: './sidebar.component.html',

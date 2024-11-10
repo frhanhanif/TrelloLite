@@ -1,0 +1,33 @@
+<div class="px-4 gap-4 flex flex-col text-cc-text w-full">
+
+    <div class="flex flex-col gap-4">
+        <div class="flex justify-between items-center">
+        <div class="flex gap-3 items-center">
+            <!-- <app-workspace-icon [workspace]="workspace" sizeClasses="size-14 text-4xl rounded"></app-workspace-icon> -->
+            <h2 class="text-xl font-semibold">Workspace Title</h2>
+            <button aria-label="Edit workspace info." class="p-2 rounded hover:bg-cc-overlay">
+            <!-- <app-pencil-icon dimensions="size-3"></app-pencil-icon> -->
+             ICON
+            </button>
+        </div>
+        </div>
+        <p class="text-xs text-cc-subtle leading-5">Description</p>
+    </div>
+
+    <hr class="border-t ">
+    <div class="flex flex-col gap-4">
+        <div class="flex gap-3 items-center">
+        <!-- <app-user-icon dimensions="size-6"></app-user-icon> -->
+        <h3 class="font-bold">Your boards</h3>
+        </div>
+        <!-- <app-boards-cards-grid [workspace]="workspace"></app-boards-cards-grid> -->
+         Board Grid
+        <a routerLink = "/workspace/board" class="flex bg-blue-200 hover:bg-gray-200 rounded-md gap-2 items-center p-2 font-semibold duration-200" routerLinkActive="bg-blue-100 text-blue-700">
+            <!-- <app-workspace-icon [workspace]="workspace" sizeClasses="size-6 text-sm rounded"></app-workspace-icon> -->
+            <span routerLinkActive="">Board Title</span>
+            
+        </a>
+    </div>
+    <!-- <app-delete-workspace [workspace]="workspace"></app-delete-workspace> -->
+     Delete Workspace
+</div>

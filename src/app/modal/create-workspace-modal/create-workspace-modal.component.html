@@ -1,0 +1,34 @@
+<dialog #createWorkspaceModal class="rounded-lg max-w-md w-full p-6 bg-white backdrop:bg-black/60">
+    <div class="w-full max-h-[90vh] bg-cc-menu rounded text-cc-subtle text-xs px-3 pb-5 relative overflow-auto">
+        <button (click)="close()" class="absolute top-1 right-1 bg-red-500 text-white rounded-md hover:bg-red-800">
+            <span class="text-bold text-center text-sm px-5">X</span>
+        </button>
+        <div class="flex flex-col gap-5 max-w-[388px] w-full max-h-[90vh] mx-auto mt-8">
+            <h2 class="text-xl font-semibold mb-2">Create Workspace</h2>
+            <form class="flex flex-col gap-7" [formGroup] = "createWorkspaceForm" (ngSubmit) = "onSubmit()">
+                <label for="title" class="flex flex-col gap-2">
+                    <p class="font-bold"> Workspace Title <span class="text-red-400">*</span></p>
+                    <input 
+                        id="title" 
+                        type="text" 
+                        formControlName="title" 
+                        autofocus placeholder="Ex: My Summer Project"
+                        class="{{createWorkspaceForm.get('title')?.errors? 'border-red-500': ''}} 
+                        hover:bg-cc-surface rounded bg-cc-base outline-none p-2 border-2 border-cc-border/40 focus:border-cc-accent text-sm">
+                    @if (createWorkspaceForm.get('title')?.errors) {
+                        <p class="text-sm font-light">Workspace title is required</p>
+                    }
+                </label>
+                <label for="description" class="flex flex-col gap-2">
+                    <p class="font-bold text-xs">Workspace description <span class="font-normal">Optional</span></p>
+                    <textarea class="hover:bg-cc-surface rounded bg-cc-base outline-none p-2 border-2 border-cc-border/40 focus:border-cc-accent text-sm resize-none" formControlName="description" id="description" rows="6" placeholder="Our team organizes everything here."></textarea>
+                </label>
+            </form>
+            <button
+            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800"
+            type="submit">Create</button>
+        </div>
+    </div>
+  </dialog>
+
+  
