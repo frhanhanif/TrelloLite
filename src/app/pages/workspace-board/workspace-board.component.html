@@ -1,8 +1,28 @@
 <!-- <app-sidebar></app-sidebar> -->
 
-<div class="flex space-x-4 p-6">
+<!-- Task List Container -->
+<app-create-workspaces>
 
-  <div class="w-1/2 bg-gray-100 rounded-lg p-4 shadow-md">
+    <div class="h-full w-[272px] flex flex-col">
+        <div class="bg-gray-100 h-max rounded-xl text-base overflow-hidden 
+        flex flex-col relative shadow-sm shadow-black/20">
+        content
+        </div>
+    </div>
+</app-create-workspaces>
+
+<div class="h-full w-[272px] flex flex-col">
+    <div class="bg-gray-100 h-max rounded-xl text-base overflow-hidden 
+    flex flex-col relative shadow-sm shadow-black/20">
+    List
+    </div>
+</div>
+
+<!-- Task List Container -->
+
+<!-- <div class="h-full flex gap-3">
+
+  <div class="p-2 text-sm font-semibold flex gap-1" cdkDragHandle>
     <h2 class="font-semibold text-xl mb-4">To Do</h2>
     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]" (cdkDropListDropped)="drop($event)" class="space-y-2">
       @for (item of todo; track item) {
@@ -19,8 +39,7 @@
       }
     </div>
   </div>
-</div>
+</div> -->
 
 
-  
   
