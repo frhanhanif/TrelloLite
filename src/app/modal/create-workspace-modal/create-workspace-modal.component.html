@@ -6,6 +6,7 @@
 
         <div class="flex flex-col gap-5 max-w-[388px] w-full max-h-[90vh] mx-auto mt-8">
             <h2 class="text-xl font-semibold mb-2">Create Workspace</h2>
+
             <form class="flex flex-col gap-7" [formGroup] = "createWorkspaceForm" (ngSubmit) = "onSubmit()">
                 <label for="title" class="flex flex-col gap-2">
                     <p class="font-bold"> Workspace Title <span class="text-red-400">*</span></p>
@@ -19,17 +20,18 @@
                 </label>
                 <label for="description" class="flex flex-col gap-2">
                     <p class="font-bold text-xs">Workspace description <span class="font-normal">Optional</span></p>
-                    <textarea class="hover:bg-gray-100 rounded bg-cc-base outline-none p-2 border-2 focus:border-blue-500 
+                    <textarea class="hover:bg-gray-100 rounded outline-none p-2 border-2 focus:border-blue-500 
                     text-sm resize-none" formControlName="description" id="description" rows="6" 
                     placeholder="Our team organizes everything here."></textarea>
                 </label>
+                <button [disabled]="createWorkspaceForm.invalid"
+                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center
+                text-white rounded-lg bg-blue-700 hover:bg-blue-800" type="submit">
+                    Create
+                </button>
             </form>
 
-            <button
-            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center
-            text-white rounded-lg bg-blue-700 hover:bg-blue-800" type="submit">
-                Create
-            </button>
+
 
         </div>
     </div>

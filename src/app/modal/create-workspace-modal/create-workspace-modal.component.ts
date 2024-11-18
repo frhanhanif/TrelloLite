@@ -1,5 +1,8 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DataService } from '../../services/data.service';
+import { WorkspaceData } from '../../shared/workspacedata';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-workspace-modal',
@@ -8,21 +11,34 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   templateUrl: './create-workspace-modal.component.html',
   styleUrl: './create-workspace-modal.component.scss'
 })
-export class CreateWorkspaceModalComponent {
+export class CreateWorkspaceModalComponent implements OnInit{
+  createWorkspaceForm : FormGroup ;
+
+  constructor(private fb: FormBuilder,private dataService:DataService, private router: Router) 
+  {
+    this.createWorkspaceForm = this.fb.group({
+      title: ['', Validators.required], // Title is required
+      description: [''] // Description is optional
+    });
+   }
+
   @ViewChild('createWorkspaceModal') dialog!: ElementRef<HTMLDialogElement>;
   
+  ngOnInit(): void {
 
-  createWorkspaceForm = new FormGroup ({
-    title: new FormControl('',Validators.required),
-    description: new FormControl(''),
-  })
+  }
 
   // get title() {
   //   return this.createWorkspaceForm.get('title');
   // }
 
   onSubmit() {
-
+    if (this.createWorkspaceForm.valid) {
+      const newWorkspace : WorkspaceData = this.createWorkspaceForm.value; // Get the form data
+      this.dataService.addWorkspace(newWorkspace);
+      console.log(newWorkspace)
+    }
+    this.close();
   }
 
   open() {
@@ -32,4 +48,5 @@ export class CreateWorkspaceModalComponent {
   close() {
     this.dialog.nativeElement.close();
   }
+
 }
